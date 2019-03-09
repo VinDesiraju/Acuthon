@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="nav.css">
+	<link rel="stylesheet" href="flipstyle.css">
+  
+</head>
+
+<body>
+   <div class="Jumbotron">
+       <h1 style="text-align: center">Organizatons</h1>
+    </div>
+    
+    
+    
+    <main class="grid-container">
+
+	<div class="grid-item">
+		<div class="wrapper">
+			<div class="card-container">
+				<div class="flip-animation">
+					<!--Front of the card-->
+					<section class="item-card">
+						<div class="item-summary">
+							<h2 class="title"></h2>
+							
+                            
+                        
+							<address class="address">
+                                
+								<p class="street-address">Address:</p>
+								<p class="venue">Contact:</p>
+								<p class="street-address">9999999999</p>
+							</address>
+						</div>
+						<div class="image-wrapper">
+							<img class="featured-image" src="food-1.jpg"  />
+						</div>
+						<div class="item-time-date">
+							<time class="date" datetime="2018-10-16">organization 1</time>
+						</div>
+						<div class="item-buttons front-buttons">
+							<a class="btn-details grey">Details</a>
+							<!--<a class="btn-tickets blue " href="#" id="clicked1">Register</a>
+						--></div>
+					</section>
+                    <section class="item-card-details">
+						<div class="bio-block">
+							<h2 class="bio-band"></h2>
+							<h3 class="bio-title">About US</h3>
+						</div>
+						<div class="scroll-block">
+							<p class="bio-text">
+								We engage the kids in group games such as kho-kho, kabbadi, relay, etc which does not require any big material or play thing to conduct it yet is quite effective.
+							</p>
+						</div>
+						
+					<div class="item-buttons back">
+						<button class="btn-details grey back-arrow" href="#"></button>
+						
+								<!--<a class="btn-tickets blue " href="#" id="clicked1">Register</a>
+							-->
+					</div>
+				</section>
+			 </div>
+			</div>
+		</div>
+	</div>
+    </main>
+    <script>
+        function _toConsumableArray(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;} else {return Array.from(arr);}} // classes to place front and back cards in proper places 
+
+        placeCards = function placeCards() {
+          var wrappers = document.querySelectorAll(".wrapper");
+          [].concat(_toConsumableArray(wrappers)).forEach(function (wrapper) {
+            wrapper.classList.add("frontback-cards");
+          });
+        };
+
+        // toggle class for flip animation
+        flipCard = function flipCard() {
+          var cardContainers = document.querySelectorAll(".card-container");
+          [].concat(_toConsumableArray(cardContainers)).forEach(function (card) {
+            var cardBtns = card.querySelectorAll('.btn-details');
+            cardBtns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                card.classList.toggle("addFlip");
+              }, false);
+            });
+          });
+        };
+
+        (function () {
+          placeCards();
+          flipCard();
+        })();
+    </script>
+    </body>
+</html>
